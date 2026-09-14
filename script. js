@@ -39,8 +39,7 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-// Single Line Full Text Typing Animation
+// Single Line Live Typing Animation
 const fullText = "Student | Web Developer | Problem Solver | Gamer 🎮";
 let charIndex = 0;
 const typingContainer = document.querySelector("#typed-line");
@@ -50,10 +49,10 @@ function typeEffect() {
         if (charIndex < fullText.length) {
             typingContainer.textContent += fullText.charAt(charIndex);
             charIndex++;
-            setTimeout(typeEffect, 50); // টাইপিং স্পিড
+            setTimeout(typeEffect, 60);
         }
     }
 }
 
-// Start animation on page load
-document.addEventListener("DOMContentLoaded", typeEffect);   
+// Execute Typing on Page Load
+document.addEventListener("DOMContentLoaded", typeEffect);
