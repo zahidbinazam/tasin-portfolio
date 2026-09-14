@@ -52,59 +52,43 @@
         </div>
     </header>
 
-   <!-- Hero Section (LunarLumos Terminal Style) -->
+  <!-- Hero Section -->
 <section id="home" class="hero">
-    <div class="hero-center-container">
-        <h1 class="hero-title-centered">
-            Hello, I'm <span class="glow-text">Tasin</span>
-        </h1>
-
-        <!-- Single Line Live Typing Wrapper -->
-        <div class="roles-wrapper">
-            <span id="typed-line"></span>
+    <div class="hero-container">
+        
+        <!-- Left Column: Title & Live Typing -->
+        <div class="hero-left">
+            <h1 class="hero-title">
+                Hello, I'm <span class="glow-text">Tasin</span>
+            </h1>
+            <div class="roles-wrapper">
+                <span id="typed-line"></span>
+            </div>
         </div>
+
+        <!-- Right Column: Terminal Box -->
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn red"></span>
+                    <span class="btn yellow"></span>
+                    <span class="btn green"></span>
+                </div>
+                <span class="terminal-title">tasin@localhost ~</span>
+            </div>
+            <div class="terminal-body">
+                <p class="command"><span class="prompt">$</span> whoami</p>
+                <p class="response">Welcome to my personal space on the web. I am passionate about learning new technologies and building impactful digital experiences.</p>
+
+                <p class="command"><span class="prompt">$</span> skills</p>
+                <p class="response">HTML5, C Programming, C++ Basics, Problem Solving, Web Development</p>
+
+                <p class="command"><span class="prompt">$</span> <span class="blink-cursor">_</span></p>
+            </div>
+        </div>
+
     </div>
-</section> 
-
-<!-- Typed.js Script (index.html-এর একদম নিচে </body> ট্যাগের ঠিক ওপরে বসাবেন) -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-  var typed = new Typed('#typed-line', {
-    strings: [
-      'Student <span class="divider">|</span> Web Developer <span class="divider">|</span> Problem Solver <span class="divider">|</span> Gamer 🎮'
-    ],
-    typeSpeed: 50,
-    showCursor: true,
-    cursorChar: '|',
-    loop: false
-  });
-</script>
-                <span>Student</span> <span class="divider">|</span>
-                <span>Web Developer</span> <span class="divider">|</span>
-                <span>Problem Solver</span> <span class="divider">|</span>
-                <span>Gamer 🎮</span>
-            </div>
-
-            <div class="terminal-card">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-user">tasin@localhost ~</span>
-                </div>
-                <div class="terminal-body">
-                    <p class="cmd"><span class="prompt">$</span> whoami</p>
-                    <p class="output">Welcome to my personal space on the web. I am passionate about learning new technologies and building impactful digital experiences.</p>
-                    
-                    <p class="cmd"><span class="prompt">$</span> skills</p>
-                    <p class="output">HTML5, C Programming, C++ Basics, Problem Solving, Web Development</p>
-                    
-                    <p class="cmd"><span class="prompt">$</span> <span class="cursor">_</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-           
+</section>
 
     <!-- About Section -->
     <section id="about" class="about">
