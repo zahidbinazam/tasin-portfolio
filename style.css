@@ -827,25 +827,53 @@ form button:hover{
         0 0 20px #00df9a,
         0 0 40px #00df9a;
 }
-.roles-wrapper {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.3rem;
-    color: #a855f7;
-    text-align: center;
-    width: 100%;
-    margin: 15px 0 25px 0;
+/* Hero Container Layout */
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-/* Typing Text Container & Blinking Cursor */
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+/* Live Typing Styling */
+.roles-wrapper {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    color: #a855f7;
+    min-height: 2rem;
+}
+
 #typed-line {
-    border-right: 2px solid #00ffaa; /* Blinking live cursor */
+    border-right: 2px solid #00ffaa;
     padding-right: 4px;
     white-space: nowrap;
     animation: blink-cursor 0.75s step-end infinite;
 }
 
-/* Cursor Blink Effect */
 @keyframes blink-cursor {
     from, to { border-color: transparent }
     50% { border-color: #00ffaa; }
+}
+
+/* Terminal Box Alignment */
+.terminal-box {
+    flex: 1;
+    max-width: 550px;
 }
