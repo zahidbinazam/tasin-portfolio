@@ -39,6 +39,7 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
 // Single Line Live Typing Animation
 const fullText = "Student | Web Developer | Problem Solver | Gamer 🎮";
 let charIndex = 0;
