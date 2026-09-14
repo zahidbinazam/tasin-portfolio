@@ -276,19 +276,25 @@ section {
 
 .roles-wrapper {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--accent-purple);
-    min-height: 2.2rem; /* layout shift বন্ধ রাখার জন্য */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin: 10px 0;
 }
 
-/* Typed.js Cursor Glow Styling */
+.roles-wrapper .divider {
+    color: #4b5563;
+    margin: 0 8px;
+}
+
+/* Cursor glow styling */
 .typed-cursor {
     color: var(--main-color);
-    font-weight: 300;
-    margin-left: 2px;
+    font-size: 1.4rem;
+    margin-left: 3px;
 }
 
 /* Terminal Box Styling */
