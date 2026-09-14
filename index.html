@@ -60,6 +60,8 @@
             </h1>
 
             <div class="roles-wrapper">
+                 <span id="typed-roles"></span>
+             </div>
                 <span>Student</span> <span class="divider">|</span>
                 <span>Web Developer</span> <span class="divider">|</span>
                 <span>Problem Solver</span> <span class="divider">|</span>
@@ -302,5 +304,22 @@
     </p>"Knowledge should be shared, not used as a tool to insult others."
 </footer>
 <script src="script.js"></script>
+ <!-- Typed.js Library CDN -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+  var typed = new Typed('#typed-roles', {
+    strings: [
+      'Student',
+      'Web Developer',
+      'Problem Solver',
+      'Gamer 🎮'
+    ],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1500,
+    loop: true
+  });
+</script>   
 </body>
 </html>
