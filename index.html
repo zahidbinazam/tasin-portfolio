@@ -59,9 +59,24 @@
                 Hello, I'm <span class="glow-text">Tasin</span>
             </h1>
 
-            <div class="roles-wrapper">
-                 <span id="typed-roles"></span>
-             </div>
+            <!-- Single Line Live Typing Wrapper -->
+<div class="roles-wrapper">
+    <span id="typed-line"></span>
+</div>
+
+<!-- Typed.js Script (index.html-এর একদম নিচে </body> ট্যাগের ঠিক ওপরে বসাবেন) -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed('#typed-line', {
+    strings: [
+      'Student <span class="divider">|</span> Web Developer <span class="divider">|</span> Problem Solver <span class="divider">|</span> Gamer 🎮'
+    ],
+    typeSpeed: 50,
+    showCursor: true,
+    cursorChar: '|',
+    loop: false
+  });
+</script>
                 <span>Student</span> <span class="divider">|</span>
                 <span>Web Developer</span> <span class="divider">|</span>
                 <span>Problem Solver</span> <span class="divider">|</span>
