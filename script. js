@@ -2,18 +2,20 @@
 const mobileMenu = document.querySelector('#mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
-mobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
-
-// Close Mobile Menu on Link Click
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navLinks.classList.remove('active');
+if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
     });
-});
+
+    // Close Mobile Menu on Link Click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
 
 // Interactive Highlight: Active Section Navigation Indicators
 const sections = document.querySelectorAll('section');
@@ -32,51 +34,26 @@ window.addEventListener('scroll', () => {
 
     navItems.forEach(item => {
         item.classList.remove('active');
-        if (item.getAttribute('href').includes(currentSectionId)) {
+        if (item.getAttribute('href') && item.getAttribute('href').includes(currentSectionId)) {
             item.classList.add('active');
         }
     });
 });
 
-
-    });
-}
-const words = [
-    "CSE Student",
-    "Future Software Engineer",
-    "Web Developer",
-    "Tech Enthusiast"
-];
-
-let wordIndex = 0;
+// Single Line Full Text Typing Animation
+const fullText = "Student | Web Developer | Problem Solver | Gamer 🎮";
 let charIndex = 0;
-let deleting = false;
+const typingContainer = document.querySelector("#typed-line");
 
-const typing = document.querySelector(".typing-text");
-
-function typeEffect(){
-
-    const current = words[wordIndex];
-
-    if(!deleting){
-        typing.textContent=current.substring(0,charIndex++);
-    }else{
-        typing.textContent=current.substring(0,charIndex--);
+function typeEffect() {
+    if (typingContainer) {
+        if (charIndex < fullText.length) {
+            typingContainer.textContent += fullText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeEffect, 50); // টাইপিং স্পিড
+        }
     }
-
-    let speed=120;
-
-    if(!deleting && charIndex===current.length+1){
-        deleting=true;
-        speed=1500;
-    }
-
-    if(deleting && charIndex===0){
-        deleting=false;
-        wordIndex=(wordIndex+1)%words.length;
-    }
-
-    setTimeout(typeEffect,speed);
 }
 
-typeEffect();
+// Start animation on page load
+document.addEventListener("DOMContentLoaded", typeEffect);   
