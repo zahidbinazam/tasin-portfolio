@@ -742,3 +742,36 @@ form button:hover {
         gap: 30px;
     }
 }
+/* LIVE HEADLINE */
+
+.typing-wrapper {
+    margin-top: 25px;
+    height: 40px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--accent-purple);
+    text-align: center;
+}
+
+#typing-text {
+    display: inline;
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--main-color);
+    font-weight: bold;
+    margin-left: 3px;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
