@@ -130,143 +130,232 @@ section {
     background: var(--text-color);
 }
 
-/* ================= HERO SECTION ================= */
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 6rem;
-    background-color: var(--bg-color);
-    background-image: radial-gradient(rgba(168, 85, 247, 0.12) 1px, transparent 1px);
-    background-size: 32px 32px;
+    padding: 80px 5% 100px;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.hero-content {
     width: 100%;
-    padding: 2rem 1rem;
+    max-width: 1100px;
+    text-align: center;
 }
 
-.hero-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* =========================
+   MAIN HEADING
+========================= */
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #f5f5f5;
+    line-height: 1.1;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 0.8rem;
-    color: #ffffff;
-}
-
-.glow-text {
+.hero h1 span {
     color: #00ffb3;
     text-shadow:
-        0 0 4px #00ffb3,
-        0 0 8px #00ffb3,
-        0 0 16px #00ffb3;
+        0 0 10px rgba(0, 255, 179, 0.8),
+        0 0 25px rgba(0, 255, 179, 0.6),
+        0 0 50px rgba(0, 255, 179, 0.35);
 }
 
-/* Live Typing Styling */
-.roles-wrapper {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
-    color: var(--accent-purple);
-    min-height: 2rem;
+/* =========================
+   LIVE HEADLINE
+========================= */
+
+.typing-wrapper {
+    margin-top: 28px;
+    min-height: 45px;
+
+    font-family: "Courier New", monospace;
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+
+    color: #b05cff;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 10px rgba(176, 92, 255, 0.5);
 }
 
-#typed-line {
-    border-right: 2px solid #00ffaa;
-    padding-right: 4px;
-    white-space: nowrap;
-    animation: blink-cursor 0.75s step-end infinite;
+.cursor {
+    color: #00ffb3;
+    font-weight: bold;
+
+    animation: blink 0.8s infinite;
 }
 
-@keyframes blink-cursor {
-    from, to { border-color: transparent; }
-    50% { border-color: #00ffaa; }
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
 }
 
-/* Terminal Box Styling */
-.terminal-box {
-    flex: 1;
-    max-width: 550px;
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal {
     width: 100%;
-    background: var(--second-bg-color);
-    border: 1px solid var(--border-purple);
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+    max-width: 950px;
+
+    margin: 55px auto 0;
+
+    background: rgba(7, 6, 28, 0.92);
+
+    border: 1px solid rgba(160, 80, 255, 0.35);
+
+    border-radius: 14px;
+
     overflow: hidden;
-    font-family: 'Fira Code', 'Courier New', monospace;
+
+    box-shadow:
+        0 0 25px rgba(100, 50, 200, 0.15),
+        0 0 70px rgba(0, 255, 179, 0.05);
+
+    text-align: left;
+
+    backdrop-filter: blur(10px);
 }
+
+/* =========================
+   TERMINAL HEADER
+========================= */
 
 .terminal-header {
-    background: #080b1a;
-    padding: 12px 18px;
+    height: 55px;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid rgba(160, 80, 255, 0.18);
 }
 
 .terminal-buttons {
     display: flex;
-    gap: 6px;
+    gap: 9px;
 }
 
-.terminal-buttons .btn {
-    width: 12px;
-    height: 12px;
+.terminal-buttons span {
+    width: 14px;
+    height: 14px;
+
     border-radius: 50%;
-    padding: 0;
+
+    display: block;
 }
 
-.terminal-buttons .btn.red { background: #ff5f56; }
-.terminal-buttons .btn.yellow { background: #ffbd2e; }
-.terminal-buttons .btn.green { background: #27c93f; }
+.red {
+    background: #ff5555;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
 
 .terminal-title {
-    color: var(--muted-color);
-    font-size: 0.85rem;
+    margin-left: 18px;
+
+    color: #a9a9c5;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
 }
+
+/* =========================
+   TERMINAL BODY
+========================= */
 
 .terminal-body {
-    padding: 25px;
-    color: #d1d5db;
-    line-height: 1.7;
-    font-size: 0.95rem;
+    padding: 40px 45px 45px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 17px;
+
+    line-height: 1.8;
 }
 
-.terminal-body .command {
-    color: var(--main-color);
-    font-weight: 600;
-    margin-top: 10px;
+.command {
+    color: #00ffb3;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 8px rgba(0, 255, 179, 0.4);
 }
 
-.terminal-body .prompt {
-    color: var(--main-color);
+.terminal-body p {
+    color: #e7e7f2;
+
+    margin: 0 0 22px;
+
+    max-width: 850px;
 }
 
-.terminal-body .response {
-    color: #e5e7eb;
-    margin-bottom: 12px;
-    padding-left: 10px;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-.blink-cursor {
-    animation: blink 1s infinite;
-}
+@media (max-width: 768px) {
 
-@keyframes blink {
-    50% { opacity: 0; }
+    .hero {
+        min-height: calc(100vh - 60px);
+
+        padding: 70px 20px 80px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .typing-wrapper {
+        font-size: 1rem;
+
+        margin-top: 20px;
+    }
+
+    .terminal {
+        margin-top: 40px;
+    }
+
+    .terminal-body {
+        padding: 28px 22px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .terminal-header {
+        height: 48px;
+    }
+
 }
 
 /* About Section */
