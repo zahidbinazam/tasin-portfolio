@@ -54,71 +54,69 @@ function typeEffect() {
         }
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
 
-// Execute Typing on Page Load
-document.addEventListener("DOMContentLoaded", typeEffect);
-/* =========================
-   LIVE TYPING HEADLINE
-========================= */
+    const typingText = document.getElementById("typing-text");
 
-const typingText = document.getElementById("typing-text");
-
-const words = [
-    "CSE Student",
-    "Aspiring AI Engineer",
-    "Web Developer",
-    "Problem Solver",
-    "Tech Enthusiast",
-    "Future Software Engineer"
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeEffect() {
-
-    const currentWord = words[wordIndex];
-
-    if (!deleting) {
-
-        typingText.textContent =
-            currentWord.substring(0, charIndex + 1);
-
-        charIndex++;
-
-        if (charIndex === currentWord.length) {
-
-            deleting = true;
-
-            setTimeout(typeEffect, 1800);
-
-            return;
-        }
-
-    } else {
-
-        typingText.textContent =
-            currentWord.substring(0, charIndex - 1);
-
-        charIndex--;
-
-        if (charIndex === 0) {
-
-            deleting = false;
-
-            wordIndex++;
-
-            if (wordIndex === words.length) {
-                wordIndex = 0;
-            }
-        }
+    if (!typingText) {
+        console.log("typing-text element not found!");
+        return;
     }
 
-    setTimeout(
-        typeEffect,
-        deleting ? 45 : 90
-    );
-}
+    const words = [
+        "CSE Student",
+        "Aspiring AI Engineer",
+        "Web Developer",
+        "Problem Solver",
+        "Tech Enthusiast"
+    ];
 
-typeEffect();
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+        const currentWord = words[wordIndex];
+
+        if (!deleting) {
+
+            typingText.textContent =
+                currentWord.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex >= currentWord.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1800);
+
+                return;
+            }
+
+        } else {
+
+            typingText.textContent =
+                currentWord.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex <= 0) {
+
+                deleting = false;
+
+                wordIndex++;
+
+                if (wordIndex >= words.length) {
+                    wordIndex = 0;
+                }
+            }
+        }
+
+        setTimeout(typeEffect, deleting ? 50 : 90);
+    }
+
+    typeEffect();
+
+});
