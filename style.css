@@ -1,41 +1,89 @@
-/* Core Custom Properties */
+/* =========================
+   CORE CUSTOM PROPERTIES
+========================= */
+
 :root {
-    --bg-color: #060814;          /* Deep Dark Navy */
-    --second-bg-color: #0b0f24;   /* Card Dark Background */
+    --bg-color: #070619;
+    --second-bg-color: #0b0a24;
+
     --text-color: #f3f4f6;
-    --main-color: #00ff9d;        /* Neon Mint Green Glow */
-    --accent-purple: #c084fc;     /* Subtitle Lilac Purple */
-    --border-purple: rgba(168, 85, 247, 0.3);
-    --muted-color: #9ca3af;
+
+    --main-color: #00ffb3;
+
+    --accent-purple: #b05cff;
+
+    --border-purple: rgba(160, 80, 255, 0.35);
+
+    --muted-color: #a9a9c5;
 }
 
-/* Reset Styles */
+
+/* =========================
+   RESET STYLES
+========================= */
+
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
+
     text-decoration: none;
     list-style: none;
+
     border: none;
     outline: none;
+
     scroll-behavior: smooth;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-family:
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
 }
 
+
+/* =========================
+   BODY
+========================= */
+
 body {
-    background: var(--bg-color);
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(60, 20, 100, 0.15),
+            transparent 45%
+        ),
+        var(--bg-color);
+
     color: var(--text-color);
+
     overflow-x: hidden;
 }
 
-/* Base Sections Layout */
+
+/* =========================
+   BASE SECTIONS
+========================= */
+
 section {
     min-height: 100vh;
+
     padding: 6rem 9% 2rem;
+
+    position: relative;
 }
+
+
+/* =========================
+   SECTION TITLE
+========================= */
 
 .section-title {
     text-align: center;
+
     margin-bottom: 4rem;
 }
 
@@ -45,23 +93,39 @@ section {
 
 .section-title span {
     color: var(--main-color);
+
+    text-shadow:
+        0 0 10px rgba(0, 255, 179, 0.5);
 }
+
+
+/* =========================
+   BUTTON
+========================= */
 
 .btn {
     display: inline-block;
+
     padding: 0.8rem 2.2rem;
+
     background: var(--main-color);
+
     border-radius: 2rem;
+
     color: var(--bg-color);
+
     font-weight: 600;
+
     transition: 0.3s ease;
 }
 
 .btn:hover {
-    box-shadow: 0 0 15px var(--main-color);
+    box-shadow:
+        0 0 15px var(--main-color),
+        0 0 30px rgba(0, 255, 179, 0.25);
+
     transform: translateY(-2px);
 }
-
 /* Navigation Bar */
 .navbar {
     position: fixed;
