@@ -67,12 +67,9 @@ body {
 /* =========================
    BASE SECTIONS
 ========================= */
-
 section {
-    min-height: 100vh;
-
-    padding: 6rem 9% 2rem;
-
+    min-height: auto;
+    padding: 5rem 9% 4rem;
     position: relative;
 }
 
@@ -203,7 +200,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 5% 100px;
+    padding: 80px 5% 70px;
     position: relative;
     overflow: hidden;
 }
