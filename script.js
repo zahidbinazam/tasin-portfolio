@@ -110,21 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const words = [
-
-        'CSE Student',
-
-        'Aspiring AI Engineer',
-
-        'Web Developer',
-
-        'Problem Solver',
-
-        'Tech Enthusiast',
-
-        'Future Software Engineer'
-
-    ];
+   const words = [
+    "CSE Student 🎓",
+    "Web Developer 💻",
+    "Problem Solver 🧠",
+    "Aspiring Cyber Security Engineer 🛡️",
+    "Gamer 🎮",
+    "Tech Enthusiast 🚀"
+];
 
 
     let wordIndex = 0;
